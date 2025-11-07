@@ -42,7 +42,8 @@ def tokenize(text: str) -> list[str]:
     return text.split()
 ```
 
-![Картинка1](../../images/lab_03/task1_2.png)
+![Картинка1](../../images/lab_06/task1_input.png)
+![Картинка1](../../images/lab_06/task1_output.png)
 
 # Задание 1.3
 
