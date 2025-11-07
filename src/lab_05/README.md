@@ -82,8 +82,8 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         for row in csvreader:
             data_csv.append(row)
         data_dict_csv = []
-        print(data_csv)
-        input()
+
+
         for i in range(len(data_csv)):
             dict_csv = {}
             if i != 0:
