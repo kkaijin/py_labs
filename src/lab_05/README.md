@@ -48,8 +48,8 @@ path_json = Path('/Applications/Python_3.13/proga/py_labs/data/samples/people.js
 json_to_csv(path_json, '/Applications/Python_3.13/proga/py_labs/data/out/people_fron_json.csv')
 csv_to_json(path_csv,'/Applications/Python_3.13/proga/py_labs/data/out/people_from_csv.json')
 ```
-![Картинка1](../../images/lab_06/task1_input.png)
-![Картинка1](../../images/lab_06/task1_output.png)
+![Картинка1](../../images/lab_05/task1_input.png)
+![Картинка1](../../images/lab_05/task1_output.png)
 
 ## Задание 1.2
 
@@ -107,8 +107,8 @@ json_to_csv(path_json, '/Applications/Python_3.13/proga/py_labs/data/out/people_
 csv_to_json(path_csv,'/Applications/Python_3.13/proga/py_labs/data/out/people_from_csv.json')
 ```
 
-![Картинка1](../../images/lab_06/task2_input.png)
-![Картинка1](../../images/lab_06/task2_output.png)
+![Картинка1](../../images/lab_05/task2_input.png)
+![Картинка1](../../images/lab_05/task2_output.png)
 
 
 ## Задание 2
@@ -163,5 +163,5 @@ csv_to_xlsx(csv_path,xlsx_path)
 ```
 
 
-![Картинка1](../../images/lab_06/task2_2_input.png)
-![Картинка1](../../images/lab_06/task2_2_output.png)
+![Картинка1](../../images/lab_05/task2_2_input.png)
+![Картинка1](../../images/lab_05/task2_2_output.png)
