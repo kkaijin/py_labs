@@ -42,4 +42,5 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
 csv_path = Path('/Applications/Python_3.13/proga/py_labs/data/samples/people.csv')
 xlsx_path = Path('/Applications/Python_3.13/proga/py_labs/data/out/people.xlsx')
 
-csv_to_xlsx(csv_path,xlsx_path)
+if __name__ == '__main__':
+    csv_to_xlsx(csv_path,xlsx_path)

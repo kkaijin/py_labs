@@ -1,6 +1,6 @@
 
-def normalize(text: str, casefold: bool, yo2e: bool) -> str:
-    sym = ['\n','\r','\t','\\','\'','\"','\b','\f','\v']
+def normalize(text: str) -> str:
+    sym = ['\\n','\\r','\\t','\\b','\\f','\\v','\n','\r','\t','\\','\'','\"','\b','\f','\v']
     s = ''
     for i in sym:
         text = text.split(i)
@@ -9,10 +9,10 @@ def normalize(text: str, casefold: bool, yo2e: bool) -> str:
         for i in text:
             s += i+' '
         text = s
-    if yo2e == True:
-        text = text.replace('ё','е').replace('Ё','Е')
-    if casefold == True:
-        text = text.casefold()
+
+    text = text.replace('ё','е').replace('Ё','Е')
+    text = text.casefold()
+
     s = ''
     text = text.split()
     for i in range(len(text)):
@@ -22,10 +22,11 @@ def normalize(text: str, casefold: bool, yo2e: bool) -> str:
             s += text[i]
     return s
 
-# print(normalize("ПрИвЕт\nМИр\t",True,True))
+# print(normalize("ПрИвЕт\nМИр\t"))
 # print(normalize("ёжик, Ёлка",True,True))
 # print(normalize("Hello\r\nWorld",True,True))
 # print(normalize("  двойные   пробелы  ",True,True))
+
 
 
 def tokenize(text: str) -> list[str]:
@@ -41,6 +42,8 @@ def tokenize(text: str) -> list[str]:
 # print(tokenize("emoji 😀 не слово"))
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
+    if len(tokens) == 0:
+        return
     set_tokens = set(tokens)
     arr_tokens = []
     dict_tokens = {}
@@ -57,6 +60,8 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
 # print(count_freq(["bb","aa","bb","aa","cc"]))
 
 def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
+    if len(freq) == 0:
+        return 
     list_freq = []
     if all(len(k)==len(list(freq.keys())[0]) for k,v in freq.items()):
         freq = sorted(freq.items(), key=lambda item: item[0], reverse = False)
@@ -72,5 +77,6 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
     return list_freq
     
 
-# print(top_n({"привет":2,"bb":2,"мир":1},5))
-# print(top_n({"a":3,"c":2,"b":2},2))
+# print(top_n({"a":3,"b":2,"c":1}, 2))
+# print(top_n({"aa":2,"bb":2,"cc":1}, 2))
+print(count_freq(""))

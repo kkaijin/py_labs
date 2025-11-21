@@ -42,6 +42,9 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     Заголовок обязателен, значения сохраняются как строки.
     json.dump(..., ensure_ascii=False, indent=2)
     """
+    if read_text(csv_path) != None:
+         return
+
     with open(csv_path, "r", newline="", encoding="utf-8") as f:
         """
             csv.DictWriter
@@ -52,20 +55,12 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         for row in csvreader:
             data_csv.append(row)
         data_dict_csv = []
-        # print(data_csv)
-        # input()
         for i in range(len(data_csv)):
             dict_csv = {}
             if i != 0:
-                # print(len(data_csv[0]), data_csv[0])
                 for j in range(len(data_csv[0])):
                         dict_csv[f'{data_csv[0][j]}'] = data_csv[i][j]
                 data_dict_csv.append(dict_csv)
-        
-        # print(data_dict_csv)
-        # capitals_json = json.dumps(data_dict_csv)
-        # with open(json_path, "w") as json_file:
-        #     json_file.write(capitals_json)
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(data_dict_csv, f, ensure_ascii=False, indent=4)
         
@@ -73,8 +68,8 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 
 # path_json = Path('/Applications/Python_3.13/proga/py_labs/data/samples/people.json')
 path_csv = Path('/Applications/Python_3.13/proga/py_labs/data/samples/cities.csv')
-path_json = Path('/Applications/Python_3.13/proga/py_labs/data/samples/people.json')
+path_json = Path('/Applications/Python_3.13/proga/py_labs/data/samples/people.json12')
 
-
-json_to_csv(path_json, '/Applications/Python_3.13/proga/py_labs/data/out/people_fron_json.csv')
-csv_to_json(path_csv,'/Applications/Python_3.13/proga/py_labs/data/out/people_from_csv.json')
+if __name__ == '__main__':
+    json_to_csv(path_json, '/Applications/Python_3.13/proga/py_labs/data/out/people_fron_json.csv')
+    csv_to_json(path_csv,'/Applications/Python_3.13/proga/py_labs/data/out/people_from_csv.json')

@@ -64,4 +64,5 @@ def main():
         stats(args.input,args.top)
 
 input()
-main()
+if __name__ == "__main__":
+    main()
