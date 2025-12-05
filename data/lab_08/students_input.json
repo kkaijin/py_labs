@@ -1,0 +1,26 @@
+[    
+    {
+        "fio": "bdfyjd А.А.", 
+        "birthdate": "2003/04/13", 
+        "group": "су-2", 
+        "gpa": 4.0
+    },
+    {
+        "fio": "jordan А.А.", 
+        "birthdate": "2004/04/13", 
+        "group": "сe-3", 
+        "gpa": 3.0
+    },
+    {
+        "fio": "jordan А.А.", 
+        "birthdate": "2005/04/13", 
+        "group": "су-1", 
+        "gpa": 2.0
+    },
+    {
+        "fio": "bakin А.А.", 
+        "birthdate": "2006/04/13", 
+        "group": "сr-5", 
+        "gpa": 1.0
+    }
+]
